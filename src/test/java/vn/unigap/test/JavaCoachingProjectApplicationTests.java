@@ -1,4 +1,4 @@
-package com.unigap.java_coaching_project;
+package vn.unigap.test;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,23 +1,29 @@
-package com.unigap.java_coaching_project.vn.unigap.api.service;
+package vn.unigap.api.service;
 
-import com.unigap.java_coaching_project.vn.unigap.api.entity.Employee;
+import org.springframework.beans.factory.annotation.Autowired;
+import vn.unigap.api.dto.in.EmployeeDtoIn;
+import vn.unigap.api.dto.in.PageDtoIn;
+import vn.unigap.api.dto.out.EmployeeDtoOut;
+import vn.unigap.api.dto.out.PageDtoOut;
+import vn.unigap.api.entity.Employee;
+import vn.unigap.api.repository.EmployeeRepository;
 
 import java.util.List;
 
 public interface IEmployeeService {
     //Them nhan vien
-    public Employee addEmployee(Employee employee);
+    public EmployeeDtoOut addEmployee(EmployeeDtoIn employee);
 
     //Chinh sua thong tin nhan vien
-    public Employee updateEmployee(long id, Employee employee);
+    public EmployeeDtoOut updateEmployee(long id, EmployeeDtoIn employeeDtoIn);
 
     //Xoa nhan vien
-    public boolean deleteEmployee(long id);
+    public void deleteEmployee(long id);
 
     //Ham lay ra ds nhan vien
-    public List<Employee> getAllEmployee();
+    public PageDtoOut<EmployeeDtoOut> getAllEmployee(PageDtoIn pageDtoIn);
 
     //Ham lay ra mot nhan vien
-    public Employee getOneEmployee(long id);
+//    public Employee getOneEmployee(long id);
 
 }
